@@ -4,11 +4,10 @@
   "sourceRoot": "apps/nestjs/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
-    "tsConfigPath": "apps/nestjs/tsconfig.app.json"
+    "webpack": true
   },
   "monorepo": true,
-  "root": "apps/nestjs",
+  "root": "apps/api-trcp-stream-resolver",
   "projects": {
     "nestjs": {
       "type": "application",
