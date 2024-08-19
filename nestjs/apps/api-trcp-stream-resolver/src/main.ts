@@ -1,8 +1,12 @@
-import { NestFactory } from '@nestjs/core';
-import { ApiTrcpStreamResolverModule } from './api-trcp-stream-resolver.module';
+import {NestFactory} from '@nestjs/core';
+import {ApiTrcpStreamResolverModule} from './api-trcp-stream-resolver.module';
+import {ApiTrcpStreamResolverService} from "./api-trcp-stream-resolver.service";
 
-async function bootstrap() {
-  const app = await NestFactory.create(ApiTrcpStreamResolverModule);
-  await app.listen(3000);
+
+export const handler = async () => {
+    const appContext =  await NestFactory.createApplicationContext(
+        ApiTrcpStreamResolverModule
+    )
+
+    const eventsService = appContext.get(ApiTrcpStreamResolverService)
 }
-bootstrap();
